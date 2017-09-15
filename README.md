@@ -12,3 +12,6 @@ The final argument is the name of the outputfile to be written to, preferrablly 
 
 ###known issues####
 Will seg fault if you attempt to write to an output file that is being open by another program, not sure how to watch out for this.
+Also I'm being completely honest and not trying to weasel out of the points for commits, but I had over 40 commits from the past 2 weeks
+and today I used a git reset and another slew of commands because my git was not letting me push and somehow it erased all of my commits
+but I understand that the commits you see is all you know.
