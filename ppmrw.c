@@ -304,7 +304,7 @@ int main(int argc, char* argv[])
 {
 	FILE* fp;
 	int ch, magicnum;
-	unsigned int width, height, maxColVal;
+	int width, height, maxColVal;
 	Pixel* pixmap;
 
 
@@ -374,6 +374,12 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 
+	if(height < 0 || width < 0)
+	{
+		fprintf(stderr, "Height and Width must not be negative\n");
+		return 1;
+	}
+
 	ch = fgetc(fp);
 
 	if (isspace(ch) == 0)
@@ -395,6 +401,12 @@ int main(int argc, char* argv[])
 	if(fscanf(fp, "%d", &maxColVal) == 0)
 	{
 		fprintf(stderr, "Could not read in Max Color Value properly, make sure file contents are formatted correctly.\n");
+		return 1;
+	}
+
+	if(maxColVal < 0)
+	{
+		fprintf(stderr, "Max Color Value cannot be negative \n");
 		return 1;
 	}
 
