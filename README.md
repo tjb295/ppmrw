@@ -11,3 +11,4 @@ Following this you must enter your input file name to be converted, this can eit
 The final argument is the name of the outputfile to be written to, preferrablly the file does not exist yet
 
 ###known issues####
+Will seg fault if you attempt to write to an output file that is being open by another program, not sure how to watch out for this.
