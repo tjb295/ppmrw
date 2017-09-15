@@ -38,21 +38,6 @@ void checkforcomment(FILE* fs)
 	}
 	ungetc(ch, fs);
 }
-void printRawBits(size_t const size, void const * const ptr, FILE* fs)
-{
-	unsigned char *b = (unsigned char*) ptr;
-	unsigned char byte;
-	int i, j;
-
-	for(i = size-1; i>=0; i--)
-	{
-		for (j=7; j >= 0 ; j--)
-		{
-			byte = (b[i] >> j) & 1;
-			fputc(byte, fs);
-		}
-	}
-}
 
 //method for reading from ascii data
 int readfromP3(FILE* fs, int width, int height, int maxColVal, Pixel* pixmap)
